@@ -1,0 +1,38 @@
+name: Django CD
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v3
+      with:
+        python-version: '3.10'
+
+    - name: Install dependencies
+      working-directory: sshsharedcart
+      run: |
+        pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Build Docker image
+      run: docker build -t sshsharedcartapp .
+
+    - name: Push Docker image to Docker Hub
+      uses: docker/login-action@v2
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+
+    - name: Push Docker image
+      run: |
+        docker tag sshsharedcartapp ${{ secrets.DOCKER_USERNAME }}/sshsharedcartapp:latest
+        docker push ${{ secrets.DOCKER_USERNAME }}/sshsharedcartapp:latest
