@@ -50,3 +50,23 @@ def signup_step2(request):
     else:
         form = SignupFormStep2()
     return render(request, 'registration/signup_step2.html', {'form': form})
+
+@login_required(login_url='login')
+def supermarkets(request):
+    supermarkets = Supermarket.objects.all()
+    selected_supermarket_id = request.GET.get('supermarket')
+    search_query = request.GET.get('search', '')
+
+    products = Product.objects.all()
+    if selected_supermarket_id:
+        products = products.filter(supermarket__id=selected_supermarket_id)
+    if search_query:
+        products = products.filter(name__icontains=search_query)
+
+    context = {
+        'supermarkets': supermarkets,
+        'products': products,
+        'selected_supermarket_id': selected_supermarket_id,
+        'search_query': search_query,
+    }
+    return render(request, 'supermarkets.html', context)
