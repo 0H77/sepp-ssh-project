@@ -70,3 +70,52 @@ def supermarkets(request):
         'search_query': search_query,
     }
     return render(request, 'supermarkets.html', context)
+
+@login_required(login_url='login')
+def shared_cart(request):
+    cart, created = Cart.objects.get_or_create(name='Shared Cart')
+    cart.users.add(request.user)
+    total_price = sum(item.total_price for item in cart.items.all())
+    context = {'cart': cart, 'total_price': total_price}
+    return render(request, 'shared_cart.html', context)
+
+@login_required(login_url='login')
+def add_to_cart(request, product_id):
+    product = get_object_or_404(Product, id=product_id)
+    cart, _ = Cart.objects.get_or_create(name='Shared Cart')
+    cart.users.add(request.user)
+    
+    cart_item, created = CartItem.objects.get_or_create(
+        cart=cart,
+        product=product,
+        added_by=request.user,
+        defaults={'quantity': 1}
+    )
+    
+    if not created:
+        cart_item.quantity += 1
+        cart_item.save()
+    
+    messages.success(request, f'Added {product.name} to cart.')
+    
+    next_url = request.POST.get('next', 'supermarkets')
+    return redirect(next_url)
+
+@login_required(login_url='login')
+def update_quantity(request, item_id):
+    cart_item = get_object_or_404(CartItem, id=item_id)
+    if cart_item.added_by != request.user:
+        messages.error(request, "You can only update items you added.")
+        return redirect('shared_cart')
+    if request.method == 'POST':
+        quantity = request.POST.get('quantity')
+        if quantity:
+            cart_item.quantity = int(quantity)
+            cart_item.save()
+    return redirect('shared_cart')
+
+@login_required(login_url='login')
+def remove_from_cart(request, item_id):
+    cart_item = get_object_or_404(CartItem, id=item_id)
+    cart_item.delete()
+    return redirect('shared_cart')
