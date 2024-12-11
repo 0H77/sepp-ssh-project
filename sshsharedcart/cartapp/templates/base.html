@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Shared Cart{% endblock %}</title>
+    {% load static %}
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .navbar {
+            background-color: #f8f9fa;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            border-bottom: 1px solid #dee2e6;
+        }
+        .navbar a {
+            margin-left: 15px;
+            text-decoration: none;
+            background-color: black;
+            color: white;
+            padding: 8px 12px;
+            border: 1px solid black;
+            border-radius: 4px;
+            transition: background-color 0.3s, color 0.3s;
+            font-family: Arial, sans-serif;
+        }
+        .navbar a:hover {
+            background: #444;
+        }
+        .messages {
+            list-style: none;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        .messages li {
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 5px;
+        }
+        .messages li.success {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .messages li.error {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+                {% if user.is_authenticated %}
+            {% if request.resolver_match.url_name == 'checkout' %}
+                <a href="{% url 'supermarkets' %}?supermarket=1">Supermarkets</a>
+                <a href="{% url 'shared_cart' %}">View Cart</a>
+            {% elif request.resolver_match.url_name == 'supermarkets' %}
+                <a href="{% url 'shared_cart' %}">View Cart</a>
+            {% else %}
+                <a href="{% url 'supermarkets' %}?supermarket=1">Supermarkets</a>
+            {% endif %}
+            <a href="{% url 'logout' %}">Logout</a>
+        {% else %}
+            <a href="{% url 'login' %}">Login</a>
+            <a href="{% url 'signup' %}">Sign Up</a>
+        {% endif %}
+    </div>
+
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li class="{{ message.tags }}">{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    {% block content %}
+    {% endblock %}
+</body>
+</html>
