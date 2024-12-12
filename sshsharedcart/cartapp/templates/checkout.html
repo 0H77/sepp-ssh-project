@@ -267,7 +267,11 @@
         </div>
 
         <!-- Checkout Button -->
-        <button type="button" onclick="window.location.href='{% url 'console' %}'" class="checkout-button">Confirm Order</button>
+        {% if product_data %}
+            <button type="button" onclick="window.location.href='{% url 'console' %}'" class="checkout-button">Confirm Order</button>
+        {% else %}
+            <p class="error-message"></p>
+        {% endif %}
     </section>
 </body>
 </html>

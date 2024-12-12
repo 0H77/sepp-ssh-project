@@ -45,8 +45,6 @@ def signup(request):
     if request.method == 'POST':
         form = SignupFormStep1(request.POST)
         if form.is_valid():
-            user = form.save()
-            logger.info(f'New user registered: {user.username}')
             request.session['signup_email'] = form.cleaned_data['email']
             return redirect('signup_step2')
         else:
@@ -60,7 +58,6 @@ def signup_step2(request):
     if 'signup_email' not in request.session:
         logger.warning('Signup step2 accessed without signup_step1')
         return redirect('signup')
-
     if request.method == 'POST':
         form = SignupFormStep2(request.POST)
         if form.is_valid():
@@ -68,12 +65,10 @@ def signup_step2(request):
             username = form.cleaned_data['username']
             password = form.cleaned_data['password']
             address = form.cleaned_data['address']
-
             user = User.objects.create_user(username=username, email=email, password=password)
             user.profile.address = address
             user.profile.save()
-            logger.info(f'Profile created for user: {request.user.username}')
-
+            logger.info(f'Profile created for user: {username}')
             user = authenticate(request, username=username, password=password)
             login(request, user)
             return redirect('supermarkets')

@@ -52,7 +52,7 @@
 </head>
 <body>
     <div class="navbar">
-                {% if user.is_authenticated %}
+        {% if user.is_authenticated %}
             {% if request.resolver_match.url_name == 'checkout' %}
                 <a href="{% url 'supermarkets' %}?supermarket=1">Supermarkets</a>
                 <a href="{% url 'shared_cart' %}">View Cart</a>

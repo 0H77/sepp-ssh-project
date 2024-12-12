@@ -1,0 +1,391 @@
+[2024-12-12 12:51:33,352] INFO root: Testing add to cart view redirects to supermarkets
+[2024-12-12 12:51:33,358] INFO cartapp.views: Accessed add_to_cart view
+[2024-12-12 12:51:33,362] INFO cartapp.views: Accessed supermarkets view
+[2024-12-12 12:51:33,753] INFO root: Testing CartItem __str__ method
+[2024-12-12 12:51:33,753] INFO root: Testing CartItem total_price property
+[2024-12-12 12:51:33,754] INFO root: Testing CartItem total_price property with multiple items
+[2024-12-12 12:51:33,755] INFO root: Testing Cart __str__ method
+[2024-12-12 12:51:34,441] INFO root: Testing if checkout page loads correctly
+[2024-12-12 12:51:34,442] INFO cartapp.views: Accessed checkout view
+[2024-12-12 12:51:34,788] INFO root: Testing checkout page redirects when not logged in
+[2024-12-12 12:51:35,156] INFO root: Testing if checkout page shows cart items
+[2024-12-12 12:51:35,158] INFO cartapp.views: Accessed checkout view
+[2024-12-12 12:51:35,505] INFO root: Testing if checkout page shows checkout button
+[2024-12-12 12:51:35,506] INFO cartapp.views: Accessed checkout view
+[2024-12-12 12:51:35,850] INFO root: Testing if checkout page shows empty cart message
+[2024-12-12 12:51:35,851] INFO cartapp.views: Accessed checkout view
+[2024-12-12 12:51:36,200] INFO root: Testing if checkout page shows total
+[2024-12-12 12:51:36,203] INFO cartapp.views: Accessed checkout view
+[2024-12-12 12:51:36,557] INFO root: Testing if checkout page shows total price
+[2024-12-12 12:51:36,558] INFO cartapp.views: Accessed checkout view
+[2024-12-12 12:51:36,914] INFO root: Testing if checkout page shows total price for multiple items
+[2024-12-12 12:51:36,915] INFO cartapp.views: Accessed checkout view
+[2024-12-12 12:51:36,919] INFO root: Testing Product __str__ method
+[2024-12-12 12:51:37,280] INFO root: Testing profile __str__ method
+[2024-12-12 12:51:37,978] INFO root: Testing if shared cart page loads correctly
+[2024-12-12 12:51:37,980] INFO cartapp.views: Accessed shared_cart view
+[2024-12-12 12:51:38,327] INFO root: Testing if shared cart page shows cart
+[2024-12-12 12:51:38,328] INFO cartapp.views: Accessed shared_cart view
+[2024-12-12 12:51:38,679] INFO root: Testing if shared cart page shows empty cart message
+[2024-12-12 12:51:38,681] INFO cartapp.views: Accessed shared_cart view
+[2024-12-12 12:51:39,032] INFO root: Testing if shared cart page shows total price
+[2024-12-12 12:51:39,033] INFO cartapp.views: Accessed shared_cart view
+[2024-12-12 12:51:39,036] INFO root: Testing Supermarket __str__ method
+[2024-12-12 12:51:39,742] INFO root: Testing supermarkets page filtering by search query
+[2024-12-12 12:51:39,745] INFO cartapp.views: Accessed supermarkets view
+[2024-12-12 12:51:40,097] INFO root: Testing if supermarkets page loads correctly
+[2024-12-12 12:51:40,099] INFO cartapp.views: Accessed supermarkets view
+[2024-12-12 12:51:40,446] INFO root: Testing supermarkets page redirects when not logged in
+[2024-12-12 12:51:40,812] INFO root: Testing supermarkets page shows product images
+[2024-12-12 12:51:40,813] INFO cartapp.views: Accessed supermarkets view
+[2024-12-12 12:51:41,169] INFO root: Testing if supermarkets page shows products
+[2024-12-12 12:51:41,171] INFO cartapp.views: Accessed supermarkets view
+[2024-12-12 12:51:41,524] INFO root: Testing supermarkets page shows search query
+[2024-12-12 12:51:41,525] INFO cartapp.views: Accessed supermarkets view
+[2024-12-12 12:51:41,876] INFO root: Testing if supermarkets page shows supermarkets
+[2024-12-12 12:51:41,877] INFO cartapp.views: Accessed supermarkets view
+[2024-12-12 12:51:42,637] INFO root: Testing update quantity view does not update other users' items
+[2024-12-12 12:51:43,012] INFO cartapp.views: Accessed update_quantity view
+[2024-12-12 12:51:43,408] INFO root: Testing update quantity view redirects when not logged in
+[2024-12-12 12:51:43,862] INFO root: Testing update quantity view redirects to shared cart
+[2024-12-12 12:51:43,864] INFO cartapp.views: Accessed update_quantity view
+[2024-12-12 12:51:43,866] INFO cartapp.views: Accessed shared_cart view
+[2024-12-12 12:51:44,285] INFO root: Testing update quantity view updates item quantity
+[2024-12-12 12:51:44,287] INFO cartapp.views: Accessed update_quantity view
+[2024-12-12 14:10:33,683] INFO django.utils.autoreload: Watching for file changes with StatReloader
+[2024-12-12 14:10:40,740] INFO cartapp.views: Accessed signup view
+[2024-12-12 14:10:40,785] ERROR django.request: Internal Server Error: /signup/
+Traceback (most recent call last):
+  File "/Users/Omar/Documents/UoBD Y2/SEPP/sepp-ssh-project/sshenv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Omar/Documents/UoBD Y2/SEPP/sepp-ssh-project/sshenv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Omar/Desktop/sepp-ssh-project/sshsharedcart/cartapp/views.py", line 48, in signup
+    user = form.save()
+           ^^^^^^^^^
+AttributeError: 'SignupFormStep1' object has no attribute 'save'
+[2024-12-12 14:10:45,004] INFO cartapp.views: Accessed signup view
+[2024-12-12 14:10:46,879] INFO cartapp.views: Accessed signup view
+[2024-12-12 14:10:46,908] ERROR django.request: Internal Server Error: /signup/
+Traceback (most recent call last):
+  File "/Users/Omar/Documents/UoBD Y2/SEPP/sepp-ssh-project/sshenv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Omar/Documents/UoBD Y2/SEPP/sepp-ssh-project/sshenv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Omar/Desktop/sepp-ssh-project/sshsharedcart/cartapp/views.py", line 48, in signup
+    user = form.save()
+           ^^^^^^^^^
+AttributeError: 'SignupFormStep1' object has no attribute 'save'
+[2024-12-12 14:10:51,252] INFO django.utils.autoreload: /Users/Omar/Desktop/sepp-ssh-project/sshsharedcart/cartapp/views.py changed, reloading.
+[2024-12-12 14:10:51,836] INFO django.utils.autoreload: Watching for file changes with StatReloader
+[2024-12-12 14:10:54,820] INFO cartapp.views: Accessed signup view
+[2024-12-12 14:10:54,846] INFO cartapp.views: Accessed signup_step2 view
+[2024-12-12 14:12:19,796] INFO cartapp.views: Accessed supermarkets view
+[2024-12-12 14:12:27,173] INFO cartapp.views: Accessed signup view
+[2024-12-12 14:12:39,479] INFO cartapp.views: Accessed signup view
+[2024-12-12 14:12:39,515] INFO cartapp.views: Accessed signup_step2 view
+[2024-12-12 14:12:51,731] INFO cartapp.views: Accessed signup_step2 view
+[2024-12-12 14:12:52,108] INFO cartapp.views: Profile created for user: docker
+[2024-12-12 14:12:52,465] INFO cartapp.views: Accessed supermarkets view
+[2024-12-12 14:12:57,639] INFO cartapp.views: Accessed add_to_cart view
+[2024-12-12 14:12:57,656] INFO cartapp.views: Accessed supermarkets view
+[2024-12-12 14:12:58,580] INFO cartapp.views: Accessed add_to_cart view
+[2024-12-12 14:12:58,598] INFO cartapp.views: Accessed supermarkets view
+[2024-12-12 14:12:59,432] INFO cartapp.views: Accessed shared_cart view
+[2024-12-12 14:13:07,801] INFO cartapp.views: Accessed checkout view
+[2024-12-12 14:13:12,628] INFO cartapp.views: Accessed ssh_console_payment view
+[2024-12-12 14:13:15,176] INFO cartapp.views: User logged out: docker
+[2024-12-12 14:13:15,188] INFO cartapp.views: Accessed home view
+[2024-12-12 14:15:03,999] INFO django.utils.autoreload: Watching for file changes with StatReloader
+[2024-12-12 14:15:14,136] INFO cartapp.views: Accessed home view
+[2024-12-12 14:15:15,163] WARNING django.request: Not Found: /favicon.ico
+[2024-12-12 14:15:20,549] INFO cartapp.views: Accessed supermarkets view
+[2024-12-12 14:15:21,950] INFO cartapp.views: Accessed shared_cart view
+[2024-12-12 14:15:36,830] INFO cartapp.views: Accessed remove_from_cart view
+[2024-12-12 14:15:36,853] INFO cartapp.views: Accessed shared_cart view
+[2024-12-12 14:15:37,000] INFO cartapp.views: Accessed remove_from_cart view
+[2024-12-12 14:15:37,010] INFO cartapp.views: Accessed shared_cart view
+[2024-12-12 14:15:37,600] INFO cartapp.views: Accessed remove_from_cart view
+[2024-12-12 14:15:37,608] INFO cartapp.views: Accessed shared_cart view
+[2024-12-12 14:15:38,043] INFO cartapp.views: Accessed remove_from_cart view
+[2024-12-12 14:15:38,050] INFO cartapp.views: Accessed shared_cart view
+[2024-12-12 14:15:38,566] INFO cartapp.views: Accessed remove_from_cart view
+[2024-12-12 14:15:38,585] INFO cartapp.views: Accessed shared_cart view
+[2024-12-12 14:15:51,748] INFO cartapp.views: User logged out: omar
+[2024-12-12 14:15:51,766] INFO cartapp.views: Accessed home view
+[2024-12-12 14:16:00,752] INFO cartapp.views: Accessed signup view
+[2024-12-12 14:16:15,029] INFO cartapp.views: Accessed signup view
+[2024-12-12 14:16:15,048] INFO cartapp.views: Accessed signup_step2 view
+[2024-12-12 14:16:25,839] INFO cartapp.views: Accessed signup_step2 view
+[2024-12-12 14:16:26,231] INFO cartapp.views: Profile created for user: docker3
+[2024-12-12 14:16:26,650] INFO cartapp.views: Accessed supermarkets view
+[2024-12-12 14:16:29,757] INFO cartapp.views: Accessed shared_cart view
+[2024-12-12 14:16:31,763] INFO cartapp.views: Accessed supermarkets view
+[2024-12-12 14:16:33,431] INFO cartapp.views: Accessed add_to_cart view
+[2024-12-12 14:16:33,458] INFO cartapp.views: Accessed supermarkets view
+[2024-12-12 14:16:34,324] INFO cartapp.views: Accessed shared_cart view
+[2024-12-12 14:16:35,240] INFO cartapp.views: Accessed checkout view
+[2024-12-12 14:16:36,520] INFO cartapp.views: Accessed ssh_console_payment view
+[2024-12-12 14:16:37,520] INFO cartapp.views: User logged out: docker3
+[2024-12-12 14:16:37,528] INFO cartapp.views: Accessed home view
+[2024-12-12 14:16:48,842] INFO cartapp.views: Accessed supermarkets view
+[2024-12-12 14:16:49,869] INFO cartapp.views: Accessed shared_cart view
+[2024-12-12 14:16:50,959] INFO cartapp.views: Accessed remove_from_cart view
+[2024-12-12 14:16:50,968] INFO cartapp.views: Accessed shared_cart view
+[2024-12-12 14:16:51,815] INFO cartapp.views: Accessed checkout view
+[2024-12-12 14:16:53,574] INFO cartapp.views: Accessed ssh_console_payment view
+[2024-12-12 14:16:56,904] INFO cartapp.views: User logged out: omar
+[2024-12-12 14:16:56,919] INFO cartapp.views: Accessed home view
+[2024-12-12 14:22:12,277] INFO django.utils.autoreload: Watching for file changes with StatReloader
+[2024-12-12 14:22:21,651] INFO cartapp.views: Accessed supermarkets view
+[2024-12-12 14:22:23,101] INFO cartapp.views: Accessed shared_cart view
+[2024-12-12 14:22:24,078] INFO cartapp.views: Accessed checkout view
+[2024-12-12 14:50:34,876] INFO cartapp.views: Accessed checkout view
+[2024-12-12 14:50:44,288] INFO cartapp.views: Accessed shared_cart view
+[2024-12-12 14:50:45,865] INFO cartapp.views: Accessed supermarkets view
+[2024-12-12 14:51:05,407] INFO cartapp.views: Accessed shared_cart view
+[2024-12-12 14:51:06,331] INFO cartapp.views: Accessed supermarkets view
+[2024-12-12 14:51:07,279] INFO cartapp.views: Accessed add_to_cart view
+[2024-12-12 14:51:07,302] INFO cartapp.views: Accessed supermarkets view
+[2024-12-12 14:51:09,255] INFO cartapp.views: Accessed shared_cart view
+[2024-12-12 14:51:10,364] INFO cartapp.views: Accessed checkout view
+[2024-12-12 14:51:12,400] INFO cartapp.views: Accessed ssh_console_payment view
+[2024-12-12 14:51:27,573] INFO cartapp.views: Accessed shared_cart view
+[2024-12-12 14:51:28,408] INFO cartapp.views: Accessed remove_from_cart view
+[2024-12-12 14:51:28,426] INFO cartapp.views: Accessed shared_cart view
+[2024-12-12 14:51:29,710] INFO cartapp.views: Accessed checkout view
+[2024-12-12 14:51:50,414] INFO cartapp.views: Accessed checkout view
+[2024-12-12 14:52:23,888] INFO cartapp.views: Accessed checkout view
+[2024-12-12 14:52:30,085] INFO cartapp.views: Accessed checkout view
+[2024-12-12 14:52:36,975] INFO cartapp.views: Accessed checkout view
+[2024-12-12 14:53:26,474] INFO cartapp.views: Accessed ssh_console_payment view
+[2024-12-12 14:54:30,710] INFO cartapp.views: Accessed ssh_console_payment view
+[2024-12-12 14:54:34,346] INFO cartapp.views: Accessed supermarkets view
+[2024-12-12 14:54:37,618] INFO cartapp.views: Accessed shared_cart view
+[2024-12-12 14:54:38,728] INFO cartapp.views: Accessed supermarkets view
+[2024-12-12 14:54:39,305] INFO cartapp.views: Accessed shared_cart view
+[2024-12-12 14:54:44,171] INFO cartapp.views: Accessed shared_cart view
+[2024-12-12 14:56:01,943] INFO cartapp.views: Accessed shared_cart view
+[2024-12-12 14:57:03,709] INFO cartapp.views: Accessed supermarkets view
+[2024-12-12 14:57:25,732] INFO cartapp.views: Accessed supermarkets view
+[2024-12-12 14:57:26,910] INFO cartapp.views: Accessed shared_cart view
+[2024-12-12 14:57:30,119] INFO cartapp.views: Accessed checkout view
+[2024-12-12 14:57:38,566] INFO cartapp.views: Accessed ssh_console_payment view
+[2024-12-12 14:58:02,701] INFO cartapp.views: Accessed ssh_console_payment view
+[2024-12-12 14:58:02,708] ERROR cartapp.views: Error in ssh_console_payment view: Could not parse the remainder: '['console',' from '['console','
+[2024-12-12 14:58:02,800] ERROR django.request: Internal Server Error: /console/
+Traceback (most recent call last):
+  File "/Users/Omar/Documents/UoBD Y2/SEPP/sepp-ssh-project/sshenv/lib/python3.12/site-packages/django/template/smartif.py", line 180, in translate_token
+    op = OPERATORS[token]
+         ~~~~~~~~~^^^^^^^
+KeyError: "['console',"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/Omar/Desktop/sepp-ssh-project/sshsharedcart/cartapp/views.py", line 226, in ssh_console_payment
+    return render(request, 'console.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Omar/Documents/UoBD Y2/SEPP/sepp-ssh-project/sshenv/lib/python3.12/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Omar/Documents/UoBD Y2/SEPP/sepp-ssh-project/sshenv/lib/python3.12/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Omar/Documents/UoBD Y2/SEPP/sepp-ssh-project/sshenv/lib/python3.12/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Omar/Documents/UoBD Y2/SEPP/sepp-ssh-project/sshenv/lib/python3.12/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Omar/Documents/UoBD Y2/SEPP/sepp-ssh-project/sshenv/lib/python3.12/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Omar/Documents/UoBD Y2/SEPP/sepp-ssh-project/sshenv/lib/python3.12/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Omar/Documents/UoBD Y2/SEPP/sepp-ssh-project/sshenv/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Omar/Documents/UoBD Y2/SEPP/sepp-ssh-project/sshenv/lib/python3.12/site-packages/django/template/loader_tags.py", line 134, in render
+    compiled_parent = self.get_parent(context)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Omar/Documents/UoBD Y2/SEPP/sepp-ssh-project/sshenv/lib/python3.12/site-packages/django/template/loader_tags.py", line 131, in get_parent
+    return self.find_template(parent, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Omar/Documents/UoBD Y2/SEPP/sepp-ssh-project/sshenv/lib/python3.12/site-packages/django/template/loader_tags.py", line 109, in find_template
+    template, origin = context.template.engine.find_template(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Omar/Documents/UoBD Y2/SEPP/sepp-ssh-project/sshenv/lib/python3.12/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Omar/Documents/UoBD Y2/SEPP/sepp-ssh-project/sshenv/lib/python3.12/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Omar/Documents/UoBD Y2/SEPP/sepp-ssh-project/sshenv/lib/python3.12/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/Users/Omar/Documents/UoBD Y2/SEPP/sepp-ssh-project/sshenv/lib/python3.12/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Omar/Documents/UoBD Y2/SEPP/sepp-ssh-project/sshenv/lib/python3.12/site-packages/django/template/base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "/Users/Omar/Documents/UoBD Y2/SEPP/sepp-ssh-project/sshenv/lib/python3.12/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Users/Omar/Documents/UoBD Y2/SEPP/sepp-ssh-project/sshenv/lib/python3.12/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Omar/Documents/UoBD Y2/SEPP/sepp-ssh-project/sshenv/lib/python3.12/site-packages/django/template/defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Omar/Documents/UoBD Y2/SEPP/sepp-ssh-project/sshenv/lib/python3.12/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Users/Omar/Documents/UoBD Y2/SEPP/sepp-ssh-project/sshenv/lib/python3.12/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Omar/Documents/UoBD Y2/SEPP/sepp-ssh-project/sshenv/lib/python3.12/site-packages/django/template/defaulttags.py", line 969, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Omar/Documents/UoBD Y2/SEPP/sepp-ssh-project/sshenv/lib/python3.12/site-packages/django/template/defaulttags.py", line 894, in __init__
+    super().__init__(*args, **kwargs)
+  File "/Users/Omar/Documents/UoBD Y2/SEPP/sepp-ssh-project/sshenv/lib/python3.12/site-packages/django/template/smartif.py", line 171, in __init__
+    mapped_tokens.append(self.translate_token(token))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Omar/Documents/UoBD Y2/SEPP/sepp-ssh-project/sshenv/lib/python3.12/site-packages/django/template/smartif.py", line 182, in translate_token
+    return self.create_var(token)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Omar/Documents/UoBD Y2/SEPP/sepp-ssh-project/sshenv/lib/python3.12/site-packages/django/template/defaulttags.py", line 897, in create_var
+    return TemplateLiteral(self.template_parser.compile_filter(value), value)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Omar/Documents/UoBD Y2/SEPP/sepp-ssh-project/sshenv/lib/python3.12/site-packages/django/template/base.py", line 605, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Omar/Documents/UoBD Y2/SEPP/sepp-ssh-project/sshenv/lib/python3.12/site-packages/django/template/base.py", line 706, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '['console',' from '['console','
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/Omar/Documents/UoBD Y2/SEPP/sepp-ssh-project/sshenv/lib/python3.12/site-packages/django/template/smartif.py", line 180, in translate_token
+    op = OPERATORS[token]
+         ~~~~~~~~~^^^^^^^
+KeyError: "['console',"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/Omar/Documents/UoBD Y2/SEPP/sepp-ssh-project/sshenv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Omar/Documents/UoBD Y2/SEPP/sepp-ssh-project/sshenv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Omar/Documents/UoBD Y2/SEPP/sepp-ssh-project/sshenv/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Omar/Desktop/sepp-ssh-project/sshsharedcart/cartapp/views.py", line 229, in ssh_console_payment
+    return render(request, 'error.html', {'message': 'An error occurred.'})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Omar/Documents/UoBD Y2/SEPP/sepp-ssh-project/sshenv/lib/python3.12/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Omar/Documents/UoBD Y2/SEPP/sepp-ssh-project/sshenv/lib/python3.12/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Omar/Documents/UoBD Y2/SEPP/sepp-ssh-project/sshenv/lib/python3.12/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Omar/Documents/UoBD Y2/SEPP/sepp-ssh-project/sshenv/lib/python3.12/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Omar/Documents/UoBD Y2/SEPP/sepp-ssh-project/sshenv/lib/python3.12/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Omar/Documents/UoBD Y2/SEPP/sepp-ssh-project/sshenv/lib/python3.12/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Omar/Documents/UoBD Y2/SEPP/sepp-ssh-project/sshenv/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Omar/Documents/UoBD Y2/SEPP/sepp-ssh-project/sshenv/lib/python3.12/site-packages/django/template/loader_tags.py", line 134, in render
+    compiled_parent = self.get_parent(context)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Omar/Documents/UoBD Y2/SEPP/sepp-ssh-project/sshenv/lib/python3.12/site-packages/django/template/loader_tags.py", line 131, in get_parent
+    return self.find_template(parent, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Omar/Documents/UoBD Y2/SEPP/sepp-ssh-project/sshenv/lib/python3.12/site-packages/django/template/loader_tags.py", line 109, in find_template
+    template, origin = context.template.engine.find_template(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Omar/Documents/UoBD Y2/SEPP/sepp-ssh-project/sshenv/lib/python3.12/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Omar/Documents/UoBD Y2/SEPP/sepp-ssh-project/sshenv/lib/python3.12/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Omar/Documents/UoBD Y2/SEPP/sepp-ssh-project/sshenv/lib/python3.12/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/Users/Omar/Documents/UoBD Y2/SEPP/sepp-ssh-project/sshenv/lib/python3.12/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Omar/Documents/UoBD Y2/SEPP/sepp-ssh-project/sshenv/lib/python3.12/site-packages/django/template/base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "/Users/Omar/Documents/UoBD Y2/SEPP/sepp-ssh-project/sshenv/lib/python3.12/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Users/Omar/Documents/UoBD Y2/SEPP/sepp-ssh-project/sshenv/lib/python3.12/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Omar/Documents/UoBD Y2/SEPP/sepp-ssh-project/sshenv/lib/python3.12/site-packages/django/template/defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Omar/Documents/UoBD Y2/SEPP/sepp-ssh-project/sshenv/lib/python3.12/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Users/Omar/Documents/UoBD Y2/SEPP/sepp-ssh-project/sshenv/lib/python3.12/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Omar/Documents/UoBD Y2/SEPP/sepp-ssh-project/sshenv/lib/python3.12/site-packages/django/template/defaulttags.py", line 969, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Omar/Documents/UoBD Y2/SEPP/sepp-ssh-project/sshenv/lib/python3.12/site-packages/django/template/defaulttags.py", line 894, in __init__
+    super().__init__(*args, **kwargs)
+  File "/Users/Omar/Documents/UoBD Y2/SEPP/sepp-ssh-project/sshenv/lib/python3.12/site-packages/django/template/smartif.py", line 171, in __init__
+    mapped_tokens.append(self.translate_token(token))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Omar/Documents/UoBD Y2/SEPP/sepp-ssh-project/sshenv/lib/python3.12/site-packages/django/template/smartif.py", line 182, in translate_token
+    return self.create_var(token)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Omar/Documents/UoBD Y2/SEPP/sepp-ssh-project/sshenv/lib/python3.12/site-packages/django/template/defaulttags.py", line 897, in create_var
+    return TemplateLiteral(self.template_parser.compile_filter(value), value)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Omar/Documents/UoBD Y2/SEPP/sepp-ssh-project/sshenv/lib/python3.12/site-packages/django/template/base.py", line 605, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Omar/Documents/UoBD Y2/SEPP/sepp-ssh-project/sshenv/lib/python3.12/site-packages/django/template/base.py", line 706, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '['console',' from '['console','
+[2024-12-12 14:58:36,215] INFO cartapp.views: Accessed ssh_console_payment view
+[2024-12-12 14:58:37,800] INFO cartapp.views: Accessed supermarkets view
+[2024-12-12 14:58:38,690] INFO cartapp.views: Accessed shared_cart view
+[2024-12-12 14:58:39,567] INFO cartapp.views: Accessed supermarkets view
+[2024-12-12 14:58:40,237] INFO cartapp.views: Accessed shared_cart view
+[2024-12-12 14:58:42,606] INFO cartapp.views: Accessed checkout view
+[2024-12-12 15:00:33,065] INFO cartapp.views: Accessed checkout view
+[2024-12-12 15:00:41,067] INFO cartapp.views: Accessed checkout view
+[2024-12-12 15:00:44,664] INFO cartapp.views: Accessed checkout view
+[2024-12-12 15:00:45,837] INFO cartapp.views: Accessed supermarkets view
+[2024-12-12 15:00:46,975] INFO cartapp.views: Accessed shared_cart view
+[2024-12-12 15:01:00,057] INFO cartapp.views: Accessed shared_cart view
+[2024-12-12 15:01:01,840] INFO cartapp.views: Accessed supermarkets view
+[2024-12-12 15:01:02,425] INFO cartapp.views: Accessed shared_cart view
+[2024-12-12 15:01:03,131] INFO cartapp.views: Accessed supermarkets view
+[2024-12-12 15:01:03,685] INFO cartapp.views: Accessed shared_cart view
+[2024-12-12 15:01:04,406] INFO cartapp.views: Accessed checkout view
+[2024-12-12 15:03:19,121] INFO cartapp.views: User logged out: omar
+[2024-12-12 15:03:19,146] INFO cartapp.views: Accessed home view
