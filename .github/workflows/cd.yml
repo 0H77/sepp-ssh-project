@@ -10,29 +10,33 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Set up Python
-      uses: actions/setup-python@v3
+      uses: actions/setup-python@v4
       with:
         python-version: '3.12'
 
-    - name: Install dependencies
-      # working-directory: sshsharedcart
-      run: |
-        pip install --upgrade pip
-        pip install -r requirements.txt
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
 
-    - name: Build Docker image
-      run: docker build -t sshsharedcartapp .
-
-    - name: Push Docker image to Docker Hub
-      uses: docker/login-action@v2
+    - name: Login to Docker Hub
+      uses: docker/login-action@v3
       with:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
 
-    - name: Push Docker image
+    - name: Build and push Docker image
+      uses: docker/build-push-action@v5
+      with:
+        context: ./sshsharedcart
+        push: true
+        tags: |
+          ${{ secrets.DOCKER_USERNAME }}/sshsharedcartapp:latest
+          ${{ secrets.DOCKER_USERNAME }}/sshsharedcartapp:${{ github.sha }}
+        cache-from: type=gha
+        cache-to: type=gha,mode=max
+
+    - name: Test Docker image
       run: |
-        docker tag sshsharedcartapp ${{ secrets.DOCKER_USERNAME }}/sshsharedcartapp:latest
-        docker push ${{ secrets.DOCKER_USERNAME }}/sshsharedcartapp:latest
+        docker run --rm ${{ secrets.DOCKER_USERNAME }}/sshsharedcartapp:latest python manage.py check
