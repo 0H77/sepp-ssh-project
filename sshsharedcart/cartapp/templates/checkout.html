@@ -231,7 +231,7 @@
                     <p>Protein: {{ item.product.protein }}g</p>
                     <p>Carbs: {{ item.product.carbohydrates }}g</p>
                     <p>Fat: {{ item.product.fat }}g</p>
-                    <p>Health Score: {{ item.product.health_score }}% - {% if item.product.is_healthy %}Healthy{% else %}Less Healthy{% endif %}</p>
+                    <p>Health Score: {{ item.product.health_score }}% - {% if item.product.is_healthy %}Healthy{% else %}Less Healthy. Consider replacing with a healthier item.{% endif %}</p>
                 </div>
             </div>
             {% empty %}

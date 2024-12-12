@@ -4,7 +4,7 @@
         "pk": 1,
         "fields": {
             "user": 1, 
-            "university_name": "uob"
+            "address": "uob"
         }
     },
     {
