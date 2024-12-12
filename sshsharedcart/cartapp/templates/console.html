@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}SSH Console Table Payment{% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSH Console Payment</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        /* Container */
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        /* Heading */
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Confirmation Message */
+        .confirmation-message {
+            text-align: center;
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        /* SSH Console Info */
+        .ssh-console-info {
+            text-align: center;
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        /* Button */
+        .go-back-button {
+            display: block;
+            margin: 0 auto;
+            padding: 10px 20px;
+            background: black;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none;
+        }
+        .go-back-button:hover {
+            background: #444;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Order Confirmation</h2>
+        <div class="confirmation-message">
+            <p>Thank you for your order! Your order has been successfully placed.</p>
+        </div>
+        <div class="ssh-console-info">
+            <p>Your SSH Console Table is ready to be used for payment.</p>
+            <p>Please proceed to the SSH Console Table to complete your payment.</p>
+        </div>
+    </div>
+</body>
+</html>
+{% endblock %}
