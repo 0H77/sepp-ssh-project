@@ -119,3 +119,43 @@ def remove_from_cart(request, item_id):
     cart_item = get_object_or_404(CartItem, id=item_id)
     cart_item.delete()
     return redirect('shared_cart')
+
+@login_required(login_url='login')
+def checkout(request):
+    cart, created = Cart.objects.get_or_create(name='Shared Cart')
+    cart.users.add(request.user)
+    cart_items = cart.items.select_related('product', 'added_by').all()
+
+    user_totals = {}
+    user_counts = {}
+    for item in cart_items:
+        username = item.added_by.username
+        user_totals[username] = user_totals.get(username, 0) + item.quantity * item.product.price
+        user_counts[username] = user_counts.get(username, 0) + item.quantity
+
+    user_data = [
+        {'username': username, 'count': count, 'total': user_totals[username]}
+        for username, count in user_counts.items()
+    ]
+
+    product_data = defaultdict(lambda: {'product': None, 'users': [], 'total_quantity': 0})
+    for item in cart_items:
+        product = item.product
+        if not product_data[product]['product']:
+            product_data[product]['product'] = product
+        product_data[product]['users'].append({
+            'username': item.added_by.username,
+            'quantity': item.quantity
+        })
+        product_data[product]['total_quantity'] += item.quantity
+
+    product_data = list(product_data.values())
+
+    total_price = sum(user_totals.values())
+
+    context = {
+        'product_data': product_data,
+        'user_data': user_data,
+        'total_price': total_price,
+    }
+    return render(request, 'checkout.html', context)
