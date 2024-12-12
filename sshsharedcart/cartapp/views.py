@@ -159,3 +159,7 @@ def checkout(request):
         'total_price': total_price,
     }
     return render(request, 'checkout.html', context)
+
+@login_required(login_url='login')
+def ssh_console_payment(request):
+    return render(request, 'console.html')
