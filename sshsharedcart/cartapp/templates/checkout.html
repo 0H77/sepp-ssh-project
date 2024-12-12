@@ -1,4 +1,3 @@
-<!-- templates/checkout.html -->
 {% extends "base.html" %}
 {% load static %}
 {% block title %}Checkout{% endblock %}
@@ -220,7 +219,7 @@
             {% endfor %}
         </div>
         
-        <button class="analyse-button">Analyse Nutritional Information</button>
+        <button class="analyse-button">Analyse Nutritional Information (Optional)</button>
         <div class="cart" id="nutritional-breakdown" style="display: none;">
             <h2>Nutritional Breakdown</h2>
             {% for item in product_data %}
